@@ -18,21 +18,203 @@ section{
     width: 100%;
     height: 100vh;
 }
-#hero{
+section{
     background-image: url(/images/background.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
+#hero .section-box::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent 50%  , rgba(0, 0,0,0.733));
+}
 .section-box{
     background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(15px);
     border-radius: 30px;
     border: 2px solid rgba(255, 255, 255, 0.2);
     box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
-    height: 85vh;
+    height:90vh;
     width: 85%;
+    overflow: hidden;
 }
 .context-wrap{
     padding: 30px 50px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-logo{
+    font-size: 38px;
+    font-weight: 600px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.header-logo span{
+    color: #00ff26;
+}
+nav{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.nav-item{
+   font-size: 18px;
+   font-weight: 200;
+   letter-spacing: 1px;
+   text-transform: capitalize;
+   cursor: pointer;
+   transition: 0.3s;
+   position: relative;
+   display: flex;
+   justify-content: center;
+}
+nav .active{
+    color: #00ff26;
+}
+
+.nav-item::after{
+    content:'';
+    position: absolute;
+    bottom: -10px;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    border: 0 0 5px white;
+    transform: scale(0);
+    transform-origin:center;
+    transition: 0.3s;
+}
+.nav-item:hover::after{
+    transform: scale(1);
+}
+.active:hover::after{
+    background-color: #00ff26;
+    border: 0 0 5px #00ff26;
+}
+.hero-content h3{
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 50px;
+      text-align: center;
+}
+
+.hero-content h1{
+    font-size: 6rem;
+    font-weight: 800;
+    letter-spacing: 20px;
+    text-align: center;
+    margin-top: -10px;
+    text-transform: uppercase;
+}
+.hero-content{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hero-img{
+    width: 40%;
+    margin-top: -140px;
+    animation: planatAn 120s linear infinite;
+}
+.hero-btn{
+    font-size: 18px;
+    font-weight: 600px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    height: 40px;
+    width: 220px;
+    border-radius: 20px;
+    margin-top: -130px;
+    z-index: 1;
+    cursor: pointer;
+    transition: 0.3s;
+    animation: bottomIn 1s ease-in-out forwards;
+}
+.hero-btn:hover{
+    background-color: white;
+    color: black;
+}
+
+
+/* content grid */
+.content-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    padding: 0 50px;
+}
+.about-img{
+    width: 90%;
+    animation: zoomIn 1.4s ease-in-out forwards;
+    transition: 0.2s;
+    opacity: 1;
+}
+.left-grid,
+.right-grid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#about .right-grid{
+    align-items: center;
+}
+.section-sub{
+    font-size: 1.5rem ;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #00ff26;
+    text-transform: capitalize;
+    animation: bottomIn 1s ease-in-out forwards;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+.section-tittle{
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    animation: bottomIn 1s ease-in-out forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+#about .left-grid ,
+#projects .left-grid{
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgb(218,218,218);
+    animation: bottomIn 1s ease-in-out forwards;
+    animation-delay: 0.4s;
+    opacity: 0;
+}
+.action-btn{
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    color: black;
+    height: 40px;
+    width: 200px;
+    background-color: #00ff26;
+    border-radius: 25px;
+    cursor: pointer;
+    animation: bottomIn 1s ease-in-out forwards;
+    transition: 0.5s;
+    opacity: 1;
+    margin-top: 20px;
+}
+.action-btn:hover{
+    background-color: #00d11f;
 }
